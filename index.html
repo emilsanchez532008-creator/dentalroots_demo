@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dental Roots | Dra. Mónica Guarneros Bautista</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Plus+Jakarta+Sans:wght@400;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <style>
+        :root {
+            --primary-dark: #224d67; 
+            --primary-light: #06c9c9; 
+            --white: #ffffff;
+            --gray-light: #f8fafc;
+            --gray-border: #e2e8f0;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { color: var(--text-dark); background-color: var(--white); scroll-behavior: smooth; line-height: 1.6; }
+
+        /* --- Header y Navegación --- */
+        header {
+            background-color: var(--white); padding: 15px 5%; display: flex;
+            justify-content: space-between; align-items: center; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03); position: sticky; top: 0; z-index: 1000;
+        }
+        .logo h1 { color: var(--primary-dark); font-size: 1.6rem; font-weight: 800; letter-spacing: -0.5px;}
+        .logo span { font-size: 0.85rem; color: var(--text-muted); font-weight: 500;}
+        
+        nav { display: flex; gap: 25px; }
+        nav a { text-decoration: none; color: var(--text-muted); font-weight: 600; font-size: 0.95rem; transition: 0.2s; }
+        nav a:hover { color: var(--primary-light); }
+
+        .btn-primary {
+            background-color: var(--primary-light); color: var(--white); border: none;
+            padding: 12px 28px; text-decoration: none; border-radius: 50px; cursor: pointer;
+            font-weight: 700; transition: 0.3s; display: inline-block; box-shadow: 0 4px 10px rgba(6,201,201,0.2);
+        }
+        .btn-primary:hover { background-color: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 6px 15px rgba(34,77,103,0.3); }
+
+        /* --- Hero Section --- */
+        .hero {
+            min-height: calc(100svh - 95px); background-color: var(--gray-light);
+            padding: clamp(32px, 6vh, 64px) 5%;
+            display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+            align-items: center; gap: clamp(24px, 4vw, 56px);
+        }
+        .hero-text { min-width: 0; }
+        .badge {
+            background: rgba(6, 201, 201, 0.1); color: var(--primary-dark); padding: 8px 16px; 
+            border-radius: 20px; display: inline-block; margin-bottom: 20px; font-weight: 700; font-size: 0.9rem;
+        }
+        .hero-text h2 { font-size: clamp(2.2rem, 4vw, 3.2rem); line-height: 1.1; margin-bottom: 20px; color: var(--primary-dark); letter-spacing: -1px;}
+        .hero-text p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 35px; max-width: 90%; }
+        .hero-image { min-width: 0; position: relative; }
+        .hero-image img {
+            display: block; width: 100%; height: clamp(280px, 64svh, 620px);
+            object-fit: cover; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .trust-bar {
+            background: var(--primary-dark); display: flex; justify-content: space-around;
+            flex-wrap: wrap; padding: 20px 5%; gap: 20px; color: var(--white); text-align: center;
+        }
+        .trust-bar div { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 1.1rem; }
+
+        /* --- Sobre la Doctora --- */
+        .about { padding: 100px 5%; background: var(--white); display: flex; gap: 50px; align-items: center; flex-wrap: wrap;}
+        .about-image { flex: 1; min-width: 300px; text-align: center; }
+        .about-image img { max-width: 90%; border-radius: 24px; box-shadow: 15px 15px 0px var(--primary-light); }
+        .about-text { flex: 1.2; min-width: 300px; }
+        .about-text h2 { color: var(--primary-dark); font-size: 2.4rem; margin-bottom: 20px; line-height: 1.2;}
+        .about-text p { color: var(--text-muted); margin-bottom: 15px; font-size: 1.1rem; }
+        .credentials { margin-top: 25px; padding-top: 25px; border-top: 1px solid var(--gray-border); display: flex; gap: 20px;}
+        .cred-item strong { display: block; color: var(--primary-dark); font-size: 1.2rem;}
+        .cred-item span { color: var(--text-muted); font-size: 0.9rem;}
+
+        /* --- Tratamientos y Precios --- */
+        .treatments { padding: 100px 5%; background: var(--gray-light); }
+        .section-header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
+        .section-header h2 { color: var(--primary-dark); font-size: 2.5rem; margin-bottom: 15px; }
+        .section-header p { color: var(--text-muted); font-size: 1.1rem; }
+        
+        .category-title { 
+            color: var(--primary-dark); font-size: 1.5rem; margin-bottom: 25px; 
+            padding-bottom: 10px; border-bottom: 2px solid var(--primary-light); display: inline-block;
+        }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 60px;}
+        .card {
+            background: var(--white); padding: 35px; border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03); border: 1px solid var(--gray-border);
+            transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .card:hover { transform: translateY(-5px); border-color: var(--primary-light); box-shadow: 0 15px 30px rgba(6, 201, 201, 0.1); }
+        .card-header h3 { color: var(--primary-dark); font-size: 1.35rem; margin-bottom: 12px; }
+        .card-header p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5; }
+        .card-price { font-size: 1.8rem; font-weight: 800; color: var(--primary-light); margin-bottom: 20px; }
+        .card-price span { font-size: 0.9rem; color: var(--text-muted); font-weight: 500; }
+        
+        .btn-outline {
+            background: transparent; color: var(--primary-dark); border: 2px solid var(--gray-border);
+            padding: 10px; text-align: center; border-radius: 50px; font-weight: 600; text-decoration: none;
+            transition: 0.3s; display: block; width: 100%; cursor: pointer;
+        }
+        .card:hover .btn-outline { border-color: var(--primary-light); color: var(--primary-light); }
+
+        /* --- Agenda (Formulario Integrado) --- */
+        .appointment { padding: 100px 5%; background: var(--primary-dark); display: flex; gap: 50px; align-items: center; flex-wrap: wrap; }
+        .appointment-info { flex: 1; min-width: 300px; color: var(--white); }
+        .appointment-info h2 { font-size: 2.5rem; margin-bottom: 20px; }
+        .appointment-info p { opacity: 0.9; font-size: 1.1rem; margin-bottom: 30px; }
+        
+        .info-box { background: rgba(255,255,255,0.1); padding: 20px; border-radius: 12px; margin-bottom: 15px; }
+        .info-box strong { display: block; font-size: 1.1rem; margin-bottom: 5px; color: var(--primary-light);}
+        
+        .form-container { flex: 1.2; background: var(--white); padding: 40px; border-radius: 24px; min-width: 300px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 700; color: var(--primary-dark); font-size: 0.95rem;}
+        .form-control {
+            width: 100%; padding: 14px; border: 1px solid var(--gray-border); border-radius: 10px;
+            font-size: 1rem; color: var(--text-dark); background: var(--gray-light); outline: none; transition: 0.3s;
+        }
+        .form-control:focus { border-color: var(--primary-light); background: var(--white); box-shadow: 0 0 0 4px rgba(6, 201, 201, 0.1); }
+        textarea.form-control { resize: vertical; min-height: 100px; }
+
+        /* --- Footer --- */
+        footer { background: var(--white); padding: 40px 5%; text-align: center; border-top: 1px solid var(--gray-border); }
+        footer p { color: var(--text-muted); font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .hero { min-height: 0; grid-template-columns: 1fr; gap: 30px; padding: 48px 5%; }
+            .hero-text h2 { font-size: 2.4rem; }
+            .hero-text p { max-width: 100%; }
+            .hero-image img { height: clamp(240px, 45svh, 380px); }
+            .about-image img { box-shadow: 0px 10px 0px var(--primary-light); }
+            .form-container { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegación -->
+    <header>
+        <div class="logo">
+            <svg width="320" height="65" viewBox="0 0 320 65" xmlns="http://www.w3.org/2000/svg">
+                <!-- Ícono del Diente Estilizado -->
+                <g stroke="#06c9c9" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- Corona -->
+                    <path d="M 22,38 C 10,25 12,10 22,6 C 30,3 35,12 35,20 C 35,12 40,3 48,6 C 58,10 60,25 48,38" />
+                    <!-- Raíces -->
+                    <path d="M 22,38 C 22,50 25,56 28,56 C 31,56 35,43 35,43 C 35,43 39,56 42,56 C 45,56 48,50 48,38" />
+                </g>
+
+                <!-- Tipografía Principal -->
+                <text x="75" y="30" font-family="'Plus Jakarta Sans', sans-serif" font-weight="400" font-size="22" fill="#224d67" letter-spacing="1">DENTAL</text>
+                <text x="170" y="30" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="22" fill="#224d67" letter-spacing="1">ROOTS</text>
+
+                <!-- Subtítulo en cursiva -->
+                <text x="78" y="50" font-family="'Dancing Script', cursive" font-size="14" fill="#64748b">OD. Mónica Guarneros Bautista</text>
+            </svg>
+        </div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#conocenos">Conócenos</a>
+            <a href="#tratamientos">Tratamientos</a>
+            <a href="#agenda">Ubicación y Citas</a>
+        </nav>
+        <a href="#agenda" class="btn-primary">Agendar Valoración</a>
+    </header>
+
+    <!-- Hero -->
+    <section id="inicio" class="hero">
+        <div class="hero-text">
+            <div class="badge">⭐ Más de 450 pacientes satisfechos</div>
+            <h2>Salud y estética dental al más alto nivel.</h2>
+            <p>Atención odontológica integral y sin dolor en León, GTO. Recupera la función y belleza de tu sonrisa con especialistas calificados, materiales premium y opciones de pago accesibles.</p>
+            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                <a href="#agenda" class="btn-primary">Cotizar por WhatsApp</a>
+                <a href="#tratamientos" class="btn-primary" style="background: transparent; color: var(--primary-dark); border: 2px solid var(--primary-dark); box-shadow: none;">Ver Precios</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="img/unnamed.webp" alt="Instalaciones de Dental Roots">
+        </div>
+    </section>
+
+    <div class="trust-bar">
+        <div>Aceptamos Tarjetas y Meses Sin Intereses</div>
+        <div>Atención a Urgencias por Dolor</div>
+        <div>Materiales de Alta Gama Garantizados</div>
+    </div>
+
+    <!-- Sobre la Doctora -->
+    <section id="conocenos" class="about">
+        <div class="about-image">
+            <img src="img/dentist.jpg" alt="Dra. Mónica Guarneros Bautista">
+        </div>
+        <div class="about-text">
+            <h2>Tu sonrisa en las mejores manos</h2>
+            <p>Soy la <strong>Dra. Mónica Guarneros Bautista</strong>. En Dental Roots entendemos que la visita al dentista puede generar incertidumbre, por eso nuestro enfoque es 100% humanista, transparente y libre de dolor.</p>
+            <p>Contamos con un equipo multidisciplinario (ortodoncia, cirugía, endodoncia) para que encuentres todas las especialidades en un solo lugar. Mi compromiso es devolverte la confianza al sonreír, explicando cada paso de tu tratamiento detalladamente.</p>
+            
+            <div class="credentials">
+                <div class="cred-item">
+                    <strong>+10 Años</strong>
+                    <span>De experiencia clínica</span>
+                </div>
+                <div class="cred-item">
+                    <strong>Multidisciplinario</strong>
+                    <span>Todas las especialidades</span>
+                </div>
+                <div class="cred-item">
+                    <strong>Tecnología</strong>
+                    <span>Diagnósticos precisos</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tratamientos y Precios -->
+    <section id="tratamientos" class="treatments">
+        <div class="section-header">
+            <h2>Tratamientos y Precios Transparentes</h2>
+            <p>Conoce nuestras opciones. Aceptamos pagos con tarjeta y contamos con planes de financiamiento mensual para tratamientos largos.</p>
+        </div>
+
+        <h3 class="category-title">Odontología General y Prevención</h3>
+        <div class="grid">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Limpieza Dental (Profilaxis)</h3>
+                    <p>Eliminación profunda de placa bacteriana, sarro y manchas superficiales. Esencial para prevenir caries y gingivitis.</p>
+                </div>
+                <div>
+                    <div class="card-price">$500 <span>MXN</span></div>
+                    <button class="btn-outline" onclick="seleccionarTratamiento('Limpieza Dental')">Agendar Limpieza</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h3>Resinas Estéticas</h3>
+                    <p>Restauración del mismo color natural de tu diente para curar caries o reparar fracturas leves sin que se note.</p>
+                </div>
+                <div>
+                    <div class="card-price"><span>Desde</span> $750 <span>MXN</span></div>
+                    <button class="btn-outline" onclick="seleccionarTratamiento('Resina Dental')">Agendar Valoración</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h3>Periodoncia</h3>
+                    <p>Tratamiento especializado para encías inflamadas, sangrantes o dientes con movilidad por pérdida de hueso.</p>
+                </div>
+                <div>
+                    <div class="card-price"><span>Previa valoración</span></div>
+                    <button class="btn-outline" onclick="seleccionarTratamiento('Periodoncia')">Agendar Valoración</button>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="category-title">Estética y Ortodoncia</h3>
+        <div class="grid">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Ortodoncia (Brackets)</h3>
+                    <p>Alineación dental perfecta. Contamos con brackets metálicos tradicionales y opciones estéticas de cerámica (desde $6,500).</p>
+                </div>
+                <div>
+                    <div class="card-price">$4,000 <span>MXN / Inicial</span></div>
+                    <button class="btn-outline" onclick="seleccionarTratamiento('Ortodoncia')">Cotizar Ortodoncia</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h3>Diseño de Sonrisa</h3>
+                    <p>Transformación total de la estética de tus dientes (forma, tamaño y color) utilizando carillas de alta resistencia.</p>
+                </div>
+                <div>
+                    <div class="card-price">$8,400 <span>MXN</span></div>
+                    <button class="btn-outline" onclick="seleccionarTratamiento('Diseño de Sonrisa')">Cotizar Diseño</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h3>Blanqueamiento Dental</h3>
+                    <p>Aclara varios tonos el color de tus dientes en una sola sesión clínica de forma segura y sin dañar el esmalte.</p>
+                </div>
+                <div>
+                    <div class="card-price"><span>Consultar promo del mes</span></div>
+                    <button class="btn-outline" onclick="seleccionarTratamiento('Blanqueamiento')">Consultar Precio</button>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="category-title">Cirugía y Rehabilitación</h3>
+        <div class="grid">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Cirugía de 3er Molar</h3>
+                    <p>Extracción quirúrgica de muelas del juicio impactadas. Procedimiento seguro, rápido y con control del dolor garantizado.</p>
+                </div>
+                <div>
+                    <div class="card-price">$2,300 <span>MXN</span></div>
+                    <button class="btn-outline" onclick="seleccionarTratamiento('Cirugía de 3er Molar')">Agendar Cirugía</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h3>Implante Dental</h3>
+                    <p>La opción más natural y definitiva para reemplazar un diente perdido, anclado directamente al hueso maxilar.</p>
+                </div>
+                <div>
+                    <div class="card-price">$12,000 <span>MXN</span></div>
+                    <button class="btn-outline" onclick="seleccionarTratamiento('Implante Dental')">Agendar Valoración</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h3>Endodoncia</h3>
+                    <p>Tratamiento para salvar un diente severamente infectado o con dolor agudo, limpiando los conductos internos.</p>
+                </div>
+                <div>
+                    <div class="card-price"><span>Previa valoración</span></div>
+                    <button class="btn-outline" onclick="seleccionarTratamiento('Endodoncia')">Atender Urgencia</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Casos de Éxito / Antes y Después -->
+    <section class="success-stories" style="padding: 80px 5%; background: var(--white); text-align: center;">
+        <div class="section-header">
+            <h2>Resultados que transforman sonrisas</h2>
+            <p>No solo lo decimos, lo demostramos. Mira los cambios reales de nuestros pacientes.</p>
+        </div>
+        <div style="display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; margin-top: 40px;">
+            <div style="background: var(--gray-light); padding: 20px; border-radius: 20px; max-width: 400px; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
+                <img src="img/befafter.webp" alt="Antes y después de blanqueamiento dental" style="width: 100%; border-radius: 12px; margin-bottom: 15px;">
+                <h3 style="color: var(--primary-dark); margin-bottom: 10px;">Blanqueamiento Dental Estético</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Recuperación de hasta 3 tonos de blancura en una sola sesión, sin sensibilidad.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sistema de Agenda Inteligente -->
+    <section id="agenda" class="appointment">
+        <div class="appointment-info">
+            <h2>Agenda tu visita hoy mismo</h2>
+            <p>Completa este breve formulario. Nuestro sistema estructurará un mensaje directo a nuestro WhatsApp oficial para brindarte atención inmediata y confirmar tu cita.</p>
+            
+            <div class="info-box">
+                <strong>📍 Ubicación del Consultorio</strong>
+                Blvd. Francisco Villa #2106 Local 5,<br>Col. Jardines de Oriente, León GTO.
+            </div>
+            <div class="info-box">
+                <strong>🕒 Horarios de Atención</strong>
+                Lunes a Viernes: 10:00 am - 2:00 pm y 4:00 pm - 8:00 pm<br>Sábados: 10:00 am - 2:00 pm
+            </div>
+            <div class="info-box">
+                <strong>📞 Contacto Directo</strong>
+                477 471 6365
+            </div>
+        </div>
+        
+        <div class="form-container">
+            <h3 style="color: var(--primary-dark); font-size: 1.5rem; margin-bottom: 25px;">Recepción Digital</h3>
+            <form id="whatsappForm" onsubmit="enviarCita(event)">
+                <div class="form-group">
+                    <label for="nombre">Nombre completo del paciente</label>
+                    <input type="text" id="nombre" class="form-control" placeholder="Ej. Ana Martínez" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="servicio">Tratamiento o Servicio a cotizar</label>
+                    <select id="servicio" class="form-control" required>
+                        <option value="" disabled selected>Selecciona una opción...</option>
+                        <option value="Limpieza Dental">Limpieza Dental ($500)</option>
+                        <option value="Resina Dental">Resina Dental (Desde $750)</option>
+                        <option value="Ortodoncia">Ortodoncia (Brackets)</option>
+                        <option value="Diseño de Sonrisa">Diseño de Sonrisa</option>
+                        <option value="Blanqueamiento">Blanqueamiento Dental</option>
+                        <option value="Cirugía de 3er Molar">Cirugía de 3er Molar</option>
+                        <option value="Implante Dental">Implante Dental</option>
+                        <option value="Endodoncia">Endodoncia / Urgencia por Dolor</option>
+                        <option value="Periodoncia">Periodoncia</option>
+                        <option value="Prótesis Removible">Prótesis Removible</option>
+                        <option value="Extracción Dental">Extracción Dental</option>
+                        <option value="Valoración General">Valoración General (No estoy seguro)</option>
+                    </select>
+                </div>
+
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <div class="form-group" style="flex: 1; min-width: 130px;">
+                        <label for="fecha">Día sugerido</label>
+                        <input type="date" id="fecha" class="form-control" required>
+                    </div>
+                    <div class="form-group" style="flex: 1; min-width: 130px;">
+                        <label for="horario">Horario preferido</label>
+                        <select id="horario" class="form-control" required>
+                            <option value="Mañana (10:00 am - 2:00 pm)">Mañana (10am - 2pm)</option>
+                            <option value="Tarde (4:00 pm - 8:00 pm)">Tarde (4pm - 8pm)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="notas">¿Tienes algún síntoma o duda en específico?</label>
+                    <textarea id="notas" class="form-control" placeholder="Ej. Me duele al tomar agua fría..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary" style="width: 100%; font-size: 1.15rem; padding: 16px;">
+                    Solicitar Cita por WhatsApp
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Testimonios Reales -->
+    <section class="testimonials" style="padding: 80px 5%; background: var(--gray-light);">
+        <h2 style="text-align: center; color: var(--primary-dark); font-size: 2.5rem; margin-bottom: 50px;">Lo que dicen nuestros pacientes</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            <div style="background: var(--white); padding: 30px; border-radius: 16px; border-top: 4px solid var(--primary-light); box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+                <div style="color: #FFD700; font-size: 1.2rem; margin-bottom: 10px;">⭐⭐⭐⭐⭐</div>
+                <p style="color: var(--text-muted); font-style: italic; margin-bottom: 20px;">"Excelente doctora. Me sacó las muelas del juicio y no sentí absolutamente nada de dolor. Muy paciente para explicar todo el proceso."</p>
+                <strong style="color: var(--primary-dark);">— Paciente verificado</strong>
+            </div>
+            <div style="background: var(--white); padding: 30px; border-radius: 16px; border-top: 4px solid var(--primary-light); box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+                <div style="color: #FFD700; font-size: 1.2rem; margin-bottom: 10px;">⭐⭐⭐⭐⭐</div>
+                <p style="color: var(--text-muted); font-style: italic; margin-bottom: 20px;">"Llevo mi tratamiento de ortodoncia aquí. Las instalaciones están súper limpias, la atención es de primera y sus planes de pago me ayudaron mucho."</p>
+                <strong style="color: var(--primary-dark);">— Paciente verificado</strong>
+            </div>
+            <div style="background: var(--white); padding: 30px; border-radius: 16px; border-top: 4px solid var(--primary-light); box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+                <div style="color: #FFD700; font-size: 1.2rem; margin-bottom: 10px;">⭐⭐⭐⭐⭐</div>
+                <p style="color: var(--text-muted); font-style: italic; margin-bottom: 20px;">"La doctora Mónica es súper profesional. Me hizo un diseño de sonrisa y me encantó el resultado, muy natural. Ampliamente recomendada."</p>
+                <strong style="color: var(--primary-dark);">— Paciente verificado</strong>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Dental Roots | Dra. Mónica Guarneros Bautista. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Establecer fecha mínima de hoy en el calendario
+        document.addEventListener('DOMContentLoaded', () => {
+            const dateInput = document.getElementById('fecha');
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.min = today;
+        });
+
+        // Autoseleccionar tratamiento y bajar al formulario fluidamente
+        function seleccionarTratamiento(tratamiento) {
+            const select = document.getElementById('servicio');
+            select.value = tratamiento;
+            document.getElementById('agenda').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            
+            // Efecto visual para indicar que se seleccionó
+            select.style.boxShadow = "0 0 0 4px rgba(6, 201, 201, 0.3)";
+            setTimeout(() => select.style.boxShadow = "none", 1500);
+        }
+
+        // Procesar formulario y enviar a WhatsApp
+        function enviarCita(event) {
+            event.preventDefault();
+
+            const nombre = document.getElementById('nombre').value;
+            const servicio = document.getElementById('servicio').value;
+            const fechaInput = document.getElementById('fecha').value;
+            const horario = document.getElementById('horario').value;
+            const notas = document.getElementById('notas').value;
+
+            const fechaFormat = new Date(fechaInput + 'T12:00:00').toLocaleDateString('es-MX', { 
+                weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' 
+            });
+
+            let mensaje = `👋 Hola Dra. Mónica, vi su sitio web y me gustaría agendar una cita.%0A%0A`;
+            mensaje += `👤 *Paciente:* ${nombre}%0A`;
+            mensaje += `🦷 *Tratamiento requerido:* ${servicio}%0A`;
+            mensaje += `📅 *Día sugerido:* ${fechaFormat}%0A`;
+            mensaje += `🕒 *Preferencia:* ${horario}%0A`;
+            
+            if (notas.trim() !== '') {
+                mensaje += `📝 *Notas del paciente:* ${notas}%0A`;
+            }
+            
+            mensaje += `%0A¿Podría confirmarme disponibilidad y pasos a seguir?`;
+
+            // Enviar (Teléfono de los flyers)
+            const telefono = "524774716365";
+            window.open(`https://wa.me/${telefono}?text=${mensaje}`, '_blank');
+        }
+    </script>
+</body>
+</html>
