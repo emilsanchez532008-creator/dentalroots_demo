@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dental Roots | Dra. Mónica Guarneros Bautista</title>
+    <title>Sonrisa Álamo | Clínica dental</title>
+    <meta name="description" content="Sitio de demostración para una clínica dental: servicios de odontología general, estética y rehabilitación.">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Plus+Jakarta+Sans:wght@400;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -29,6 +30,10 @@
         }
         .logo h1 { color: var(--primary-dark); font-size: 1.6rem; font-weight: 800; letter-spacing: -0.5px;}
         .logo span { font-size: 0.85rem; color: var(--text-muted); font-weight: 500;}
+        .demo-notice {
+            background: #fff3cd; color: #594b00; padding: 12px 5%; text-align: center;
+            font-size: 0.9rem; font-weight: 600;
+        }
         
         nav { display: flex; gap: 25px; }
         nav a { text-decoration: none; color: var(--text-muted); font-weight: 600; font-size: 0.95rem; transition: 0.2s; }
@@ -59,6 +64,13 @@
         .hero-image img {
             display: block; width: 100%; height: clamp(280px, 64svh, 620px);
             object-fit: cover; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .demo-illustration {
+            display: grid; place-items: center; width: min(90%, 420px); aspect-ratio: 4 / 3;
+            margin: 0 auto; border-radius: 24px;
+            background: linear-gradient(135deg, rgba(6,201,201,0.15), rgba(34,77,103,0.12));
+            box-shadow: 15px 15px 0 var(--primary-light); color: var(--primary-dark);
+            font-size: clamp(5rem, 12vw, 8rem);
         }
 
         .trust-bar {
@@ -144,6 +156,10 @@
 </head>
 <body>
 
+    <div class="demo-notice" role="note">
+        Sitio de demostración · Sonrisa Álamo y los datos de esta página son ficticios. El formulario no envía solicitudes.
+    </div>
+
     <!-- Navegación -->
     <header>
         <div class="logo">
@@ -157,76 +173,76 @@
                 </g>
 
                 <!-- Tipografía Principal -->
-                <text x="75" y="30" font-family="'Plus Jakarta Sans', sans-serif" font-weight="400" font-size="22" fill="#224d67" letter-spacing="1">DENTAL</text>
-                <text x="170" y="30" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="22" fill="#224d67" letter-spacing="1">ROOTS</text>
+                <text x="75" y="30" font-family="'Plus Jakarta Sans', sans-serif" font-weight="400" font-size="22" fill="#224d67" letter-spacing="1">SONRISA</text>
+                <text x="180" y="30" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="22" fill="#224d67" letter-spacing="1">ÁLAMO</text>
 
                 <!-- Subtítulo en cursiva -->
-                <text x="78" y="50" font-family="'Dancing Script', cursive" font-size="14" fill="#64748b">OD. Mónica Guarneros Bautista</text>
+                <text x="78" y="50" font-family="'Dancing Script', cursive" font-size="14" fill="#64748b">Odontología integral</text>
             </svg>
         </div>
         <nav>
             <a href="#inicio">Inicio</a>
             <a href="#conocenos">Conócenos</a>
             <a href="#tratamientos">Tratamientos</a>
-            <a href="#agenda">Ubicación y Citas</a>
+            <a href="#agenda">Contacto</a>
         </nav>
-        <a href="#agenda" class="btn-primary">Agendar Valoración</a>
+        <a href="#agenda" class="btn-primary">Solicitar información</a>
     </header>
 
     <!-- Hero -->
     <section id="inicio" class="hero">
         <div class="hero-text">
-            <div class="badge">⭐ Más de 450 pacientes satisfechos</div>
-            <h2>Salud y estética dental al más alto nivel.</h2>
-            <p>Atención odontológica integral y sin dolor en León, GTO. Recupera la función y belleza de tu sonrisa con especialistas calificados, materiales premium y opciones de pago accesibles.</p>
+            <div class="badge">Odontología integral para cada etapa</div>
+            <h2>Cuidamos tu salud. Celebramos tu sonrisa.</h2>
+            <p>En Sonrisa Álamo encontrarás un espacio pensado para cuidar tu salud bucal con atención cercana, orientación clara y opciones para cada necesidad.</p>
             <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                <a href="#agenda" class="btn-primary">Cotizar por WhatsApp</a>
-                <a href="#tratamientos" class="btn-primary" style="background: transparent; color: var(--primary-dark); border: 2px solid var(--primary-dark); box-shadow: none;">Ver Precios</a>
+                <a href="#agenda" class="btn-primary">Conoce nuestra clínica</a>
+                <a href="#tratamientos" class="btn-primary" style="background: transparent; color: var(--primary-dark); border: 2px solid var(--primary-dark); box-shadow: none;">Explorar tratamientos</a>
             </div>
         </div>
         <div class="hero-image">
-            <img src="img/unnamed.webp" alt="Instalaciones de Dental Roots">
+            <div class="demo-illustration" role="img" aria-label="Ilustración genérica de un diente">🦷</div>
         </div>
     </section>
 
     <div class="trust-bar">
-        <div>Aceptamos Tarjetas y Meses Sin Intereses</div>
-        <div>Atención a Urgencias por Dolor</div>
-        <div>Materiales de Alta Gama Garantizados</div>
+        <div>Prevención y cuidado bucal</div>
+        <div>Atención para toda la familia</div>
+        <div>Opciones de tratamiento personalizadas</div>
     </div>
 
-    <!-- Sobre la Doctora -->
+    <!-- Sobre la clínica -->
     <section id="conocenos" class="about">
         <div class="about-image">
-            <img src="img/dentist.jpg" alt="Dra. Mónica Guarneros Bautista">
+            <div class="demo-illustration" role="img" aria-label="Ilustración de una sonrisa saludable">🦷</div>
         </div>
         <div class="about-text">
-            <h2>Tu sonrisa en las mejores manos</h2>
-            <p>Soy la <strong>Dra. Mónica Guarneros Bautista</strong>. En Dental Roots entendemos que la visita al dentista puede generar incertidumbre, por eso nuestro enfoque es 100% humanista, transparente y libre de dolor.</p>
-            <p>Contamos con un equipo multidisciplinario (ortodoncia, cirugía, endodoncia) para que encuentres todas las especialidades en un solo lugar. Mi compromiso es devolverte la confianza al sonreír, explicando cada paso de tu tratamiento detalladamente.</p>
+            <h2>Una experiencia dental cercana y profesional</h2>
+            <p>Creemos que una buena salud bucal comienza con la prevención y una conversación honesta. Nuestro equipo te acompaña para que conozcas tus opciones y tomes decisiones informadas.</p>
+            <p>Desde una revisión de rutina hasta tratamientos de restauración y estética, diseñamos cada plan de atención de acuerdo con tus necesidades y valoración clínica.</p>
             
             <div class="credentials">
                 <div class="cred-item">
-                    <strong>+10 Años</strong>
-                    <span>De experiencia clínica</span>
+                    <strong>Atención integral</strong>
+                    <span>Enfoque en salud bucal</span>
                 </div>
                 <div class="cred-item">
-                    <strong>Multidisciplinario</strong>
-                    <span>Todas las especialidades</span>
+                    <strong>Trato cercano</strong>
+                    <span>Orientación en cada visita</span>
                 </div>
                 <div class="cred-item">
-                    <strong>Tecnología</strong>
-                    <span>Diagnósticos precisos</span>
+                    <strong>Planes claros</strong>
+                    <span>Opciones para cada paciente</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Tratamientos y Precios -->
+    <!-- Tratamientos -->
     <section id="tratamientos" class="treatments">
         <div class="section-header">
-            <h2>Tratamientos y Precios Transparentes</h2>
-            <p>Conoce nuestras opciones. Aceptamos pagos con tarjeta y contamos con planes de financiamiento mensual para tratamientos largos.</p>
+            <h2>Tratamientos para cuidar tu sonrisa</h2>
+            <p>Conoce algunas de las opciones de atención. Cada tratamiento se recomienda después de una valoración profesional.</p>
         </div>
 
         <h3 class="category-title">Odontología General y Prevención</h3>
@@ -234,31 +250,31 @@
             <div class="card">
                 <div class="card-header">
                     <h3>Limpieza Dental (Profilaxis)</h3>
-                    <p>Eliminación profunda de placa bacteriana, sarro y manchas superficiales. Esencial para prevenir caries y gingivitis.</p>
+                    <p>Retira placa y manchas superficiales para ayudar a mantener dientes y encías saludables. Incluye revisión preventiva.</p>
                 </div>
                 <div>
-                    <div class="card-price">$500 <span>MXN</span></div>
-                    <button class="btn-outline" onclick="seleccionarTratamiento('Limpieza Dental')">Agendar Limpieza</button>
+                    <div class="card-price">Desde $650 <span>MXN · precio de muestra</span></div>
+                    <button class="btn-outline" onclick="seleccionarTratamiento('Limpieza Dental')">Consultar tratamiento</button>
                 </div>
             </div>
             <div class="card">
                 <div class="card-header">
                     <h3>Resinas Estéticas</h3>
-                    <p>Restauración del mismo color natural de tu diente para curar caries o reparar fracturas leves sin que se note.</p>
+                    <p>Restauraciones del color del diente para reparar caries o pequeñas fracturas y recuperar su forma y función.</p>
                 </div>
                 <div>
-                    <div class="card-price"><span>Desde</span> $750 <span>MXN</span></div>
-                    <button class="btn-outline" onclick="seleccionarTratamiento('Resina Dental')">Agendar Valoración</button>
+                    <div class="card-price">Desde $900 <span>MXN · precio de muestra</span></div>
+                    <button class="btn-outline" onclick="seleccionarTratamiento('Resina Dental')">Consultar tratamiento</button>
                 </div>
             </div>
             <div class="card">
                 <div class="card-header">
                     <h3>Periodoncia</h3>
-                    <p>Tratamiento especializado para encías inflamadas, sangrantes o dientes con movilidad por pérdida de hueso.</p>
+                    <p>Prevención, diagnóstico y cuidado de las encías para mantener el soporte de tus dientes en buenas condiciones.</p>
                 </div>
                 <div>
-                    <div class="card-price"><span>Previa valoración</span></div>
-                    <button class="btn-outline" onclick="seleccionarTratamiento('Periodoncia')">Agendar Valoración</button>
+                    <div class="card-price">Valoración <span>inicial · precio de muestra</span></div>
+                    <button class="btn-outline" onclick="seleccionarTratamiento('Periodoncia')">Consultar tratamiento</button>
                 </div>
             </div>
         </div>
@@ -268,31 +284,31 @@
             <div class="card">
                 <div class="card-header">
                     <h3>Ortodoncia (Brackets)</h3>
-                    <p>Alineación dental perfecta. Contamos con brackets metálicos tradicionales y opciones estéticas de cerámica (desde $6,500).</p>
+                    <p>Alternativas para corregir la posición de los dientes y mejorar la mordida, con seguimiento durante el tratamiento.</p>
                 </div>
                 <div>
-                    <div class="card-price">$4,000 <span>MXN / Inicial</span></div>
-                    <button class="btn-outline" onclick="seleccionarTratamiento('Ortodoncia')">Cotizar Ortodoncia</button>
+                    <div class="card-price">Plan personalizado <span>tras valoración</span></div>
+                    <button class="btn-outline" onclick="seleccionarTratamiento('Ortodoncia')">Consultar tratamiento</button>
                 </div>
             </div>
             <div class="card">
                 <div class="card-header">
                     <h3>Diseño de Sonrisa</h3>
-                    <p>Transformación total de la estética de tus dientes (forma, tamaño y color) utilizando carillas de alta resistencia.</p>
+                    <p>Plan estético que puede combinar distintos procedimientos para armonizar tu sonrisa de forma adecuada para ti.</p>
                 </div>
                 <div>
-                    <div class="card-price">$8,400 <span>MXN</span></div>
-                    <button class="btn-outline" onclick="seleccionarTratamiento('Diseño de Sonrisa')">Cotizar Diseño</button>
+                    <div class="card-price">Plan personalizado <span>tras valoración</span></div>
+                    <button class="btn-outline" onclick="seleccionarTratamiento('Diseño de Sonrisa')">Consultar tratamiento</button>
                 </div>
             </div>
             <div class="card">
                 <div class="card-header">
                     <h3>Blanqueamiento Dental</h3>
-                    <p>Aclara varios tonos el color de tus dientes en una sola sesión clínica de forma segura y sin dañar el esmalte.</p>
+                    <p>Tratamiento estético para aclarar el tono dental. La técnica y su conveniencia se determinan en consulta.</p>
                 </div>
                 <div>
-                    <div class="card-price"><span>Consultar promo del mes</span></div>
-                    <button class="btn-outline" onclick="seleccionarTratamiento('Blanqueamiento')">Consultar Precio</button>
+                    <div class="card-price">Desde $2,400 <span>MXN · precio de muestra</span></div>
+                    <button class="btn-outline" onclick="seleccionarTratamiento('Blanqueamiento')">Consultar tratamiento</button>
                 </div>
             </div>
         </div>
@@ -302,105 +318,106 @@
             <div class="card">
                 <div class="card-header">
                     <h3>Cirugía de 3er Molar</h3>
-                    <p>Extracción quirúrgica de muelas del juicio impactadas. Procedimiento seguro, rápido y con control del dolor garantizado.</p>
+                    <p>Evaluación y tratamiento de terceros molares. El procedimiento se define con exploración clínica y estudios necesarios.</p>
                 </div>
                 <div>
-                    <div class="card-price">$2,300 <span>MXN</span></div>
-                    <button class="btn-outline" onclick="seleccionarTratamiento('Cirugía de 3er Molar')">Agendar Cirugía</button>
+                    <div class="card-price">Valoración <span>inicial · precio de muestra</span></div>
+                    <button class="btn-outline" onclick="seleccionarTratamiento('Cirugía de 3er Molar')">Consultar tratamiento</button>
                 </div>
             </div>
             <div class="card">
                 <div class="card-header">
                     <h3>Implante Dental</h3>
-                    <p>La opción más natural y definitiva para reemplazar un diente perdido, anclado directamente al hueso maxilar.</p>
+                    <p>Opción para reemplazar un diente ausente y recuperar función y estética. Requiere valoración individual.</p>
                 </div>
                 <div>
-                    <div class="card-price">$12,000 <span>MXN</span></div>
-                    <button class="btn-outline" onclick="seleccionarTratamiento('Implante Dental')">Agendar Valoración</button>
+                    <div class="card-price">Plan personalizado <span>tras valoración</span></div>
+                    <button class="btn-outline" onclick="seleccionarTratamiento('Implante Dental')">Consultar tratamiento</button>
                 </div>
             </div>
             <div class="card">
                 <div class="card-header">
                     <h3>Endodoncia</h3>
-                    <p>Tratamiento para salvar un diente severamente infectado o con dolor agudo, limpiando los conductos internos.</p>
+                    <p>Tratamiento de conductos para atender el interior del diente y conservarlo cuando está afectado.</p>
                 </div>
                 <div>
-                    <div class="card-price"><span>Previa valoración</span></div>
-                    <button class="btn-outline" onclick="seleccionarTratamiento('Endodoncia')">Atender Urgencia</button>
+                    <div class="card-price">Valoración <span>inicial · precio de muestra</span></div>
+                    <button class="btn-outline" onclick="seleccionarTratamiento('Endodoncia')">Consultar tratamiento</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Casos de Éxito / Antes y Después -->
+    <!-- Enfoque de atención -->
     <section class="success-stories" style="padding: 80px 5%; background: var(--white); text-align: center;">
         <div class="section-header">
-            <h2>Resultados que transforman sonrisas</h2>
-            <p>No solo lo decimos, lo demostramos. Mira los cambios reales de nuestros pacientes.</p>
+            <h2>Tu salud bucal, paso a paso</h2>
+            <p>Te explicamos cada etapa de tu atención para que te sientas con confianza desde la primera visita.</p>
         </div>
         <div style="display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; margin-top: 40px;">
             <div style="background: var(--gray-light); padding: 20px; border-radius: 20px; max-width: 400px; box-shadow: 0 10px 20px rgba(0,0,0,0.05);">
-                <img src="img/befafter.webp" alt="Antes y después de blanqueamiento dental" style="width: 100%; border-radius: 12px; margin-bottom: 15px;">
-                <h3 style="color: var(--primary-dark); margin-bottom: 10px;">Blanqueamiento Dental Estético</h3>
-                <p style="color: var(--text-muted); font-size: 0.95rem;">Recuperación de hasta 3 tonos de blancura en una sola sesión, sin sensibilidad.</p>
+                <div class="demo-illustration" role="img" aria-label="Ilustración de cuidado dental">🦷</div>
+                <h3 style="color: var(--primary-dark); margin: 20px 0 10px;">Primero, te escuchamos</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Revisamos tus necesidades, resolvemos tus dudas y te presentamos alternativas de cuidado.</p>
             </div>
         </div>
     </section>
 
-    <!-- Sistema de Agenda Inteligente -->
+    <!-- Formulario de demostración -->
     <section id="agenda" class="appointment">
         <div class="appointment-info">
-            <h2>Agenda tu visita hoy mismo</h2>
-            <p>Completa este breve formulario. Nuestro sistema estructurará un mensaje directo a nuestro WhatsApp oficial para brindarte atención inmediata y confirmar tu cita.</p>
+            <h2>Estamos para orientarte</h2>
+            <p>Déjanos saber qué tratamiento te interesa y nuestro equipo podrá explicarte los siguientes pasos. La información de contacto de esta demostración es ficticia.</p>
             
             <div class="info-box">
-                <strong>📍 Ubicación del Consultorio</strong>
-                Blvd. Francisco Villa #2106 Local 5,<br>Col. Jardines de Oriente, León GTO.
+                <strong>📍 Ubicación</strong>
+                Av. de los Olivos 120, Col. Centro, Ciudad de México
             </div>
             <div class="info-box">
-                <strong>🕒 Horarios de Atención</strong>
-                Lunes a Viernes: 10:00 am - 2:00 pm y 4:00 pm - 8:00 pm<br>Sábados: 10:00 am - 2:00 pm
+                <strong>🕒 Horarios</strong>
+                Lunes a viernes, 9:00 a 19:00 · Sábados, 9:00 a 14:00
             </div>
             <div class="info-box">
-                <strong>📞 Contacto Directo</strong>
-                477 471 6365
+                <strong>📞 Contacto</strong>
+                (55) 0000 0000 · hola@sonrisaalamo.example
             </div>
         </div>
         
         <div class="form-container">
-            <h3 style="color: var(--primary-dark); font-size: 1.5rem; margin-bottom: 25px;">Recepción Digital</h3>
-            <form id="whatsappForm" onsubmit="enviarCita(event)">
+            <h3 style="color: var(--primary-dark); font-size: 1.5rem; margin-bottom: 12px;">Solicita información</h3>
+            <p style="color: var(--text-muted); margin-bottom: 25px;">Formulario de muestra: no envía ni almacena información.</p>
+            <form id="demoForm" onsubmit="simularFormulario(event)">
                 <div class="form-group">
-                    <label for="nombre">Nombre completo del paciente</label>
-                    <input type="text" id="nombre" class="form-control" placeholder="Ej. Ana Martínez" required>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" class="form-control" placeholder="Tu nombre" autocomplete="off" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="servicio">Tratamiento o Servicio a cotizar</label>
+                    <label for="servicio">¿Qué tratamiento te interesa?</label>
                     <select id="servicio" class="form-control" required>
-                        <option value="" disabled selected>Selecciona una opción...</option>
-                        <option value="Limpieza Dental">Limpieza Dental ($500)</option>
-                        <option value="Resina Dental">Resina Dental (Desde $750)</option>
+                        <option value="" disabled selected>Selecciona un tratamiento...</option>
+                        <option value="Limpieza Dental">Limpieza dental</option>
+                        <option value="Resina Dental">Restauración dental</option>
                         <option value="Ortodoncia">Ortodoncia (Brackets)</option>
                         <option value="Diseño de Sonrisa">Diseño de Sonrisa</option>
                         <option value="Blanqueamiento">Blanqueamiento Dental</option>
                         <option value="Cirugía de 3er Molar">Cirugía de 3er Molar</option>
                         <option value="Implante Dental">Implante Dental</option>
-                        <option value="Endodoncia">Endodoncia / Urgencia por Dolor</option>
+                        <option value="Endodoncia">Endodoncia</option>
                         <option value="Periodoncia">Periodoncia</option>
-                        <option value="Prótesis Removible">Prótesis Removible</option>
-                        <option value="Extracción Dental">Extracción Dental</option>
-                        <option value="Valoración General">Valoración General (No estoy seguro)</option>
+                        <option value="Prótesis Removible">Prótesis removible</option>
+                        <option value="Extracción Dental">Extracción dental</option>
+                        <option value="Valoración General">Valoración general</option>
                     </select>
                 </div>
 
                 <div style="display: flex; gap: 15px; flex-wrap: wrap;">
                     <div class="form-group" style="flex: 1; min-width: 130px;">
-                        <label for="fecha">Día sugerido</label>
+                        <label for="fecha">Fecha de preferencia</label>
                         <input type="date" id="fecha" class="form-control" required>
                     </div>
                     <div class="form-group" style="flex: 1; min-width: 130px;">
-                        <label for="horario">Horario preferido</label>
+                        <label for="horario">Horario de preferencia</label>
                         <select id="horario" class="form-control" required>
                             <option value="Mañana (10:00 am - 2:00 pm)">Mañana (10am - 2pm)</option>
                             <option value="Tarde (4:00 pm - 8:00 pm)">Tarde (4pm - 8pm)</option>
@@ -409,91 +426,52 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="notas">¿Tienes algún síntoma o duda en específico?</label>
-                    <textarea id="notas" class="form-control" placeholder="Ej. Me duele al tomar agua fría..."></textarea>
+                    <label for="notas">¿Cómo podemos ayudarte?</label>
+                    <textarea id="notas" class="form-control" placeholder="Escribe un mensaje breve" autocomplete="off"></textarea>
                 </div>
 
                 <button type="submit" class="btn-primary" style="width: 100%; font-size: 1.15rem; padding: 16px;">
-                    Solicitar Cita por WhatsApp
+                    Enviar solicitud
                 </button>
             </form>
         </div>
     </section>
 
-    <!-- Testimonios Reales -->
+    <!-- Reseñas -->
     <section class="testimonials" style="padding: 80px 5%; background: var(--gray-light);">
-        <h2 style="text-align: center; color: var(--primary-dark); font-size: 2.5rem; margin-bottom: 50px;">Lo que dicen nuestros pacientes</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-            <div style="background: var(--white); padding: 30px; border-radius: 16px; border-top: 4px solid var(--primary-light); box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
-                <div style="color: #FFD700; font-size: 1.2rem; margin-bottom: 10px;">⭐⭐⭐⭐⭐</div>
-                <p style="color: var(--text-muted); font-style: italic; margin-bottom: 20px;">"Excelente doctora. Me sacó las muelas del juicio y no sentí absolutamente nada de dolor. Muy paciente para explicar todo el proceso."</p>
-                <strong style="color: var(--primary-dark);">— Paciente verificado</strong>
-            </div>
-            <div style="background: var(--white); padding: 30px; border-radius: 16px; border-top: 4px solid var(--primary-light); box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
-                <div style="color: #FFD700; font-size: 1.2rem; margin-bottom: 10px;">⭐⭐⭐⭐⭐</div>
-                <p style="color: var(--text-muted); font-style: italic; margin-bottom: 20px;">"Llevo mi tratamiento de ortodoncia aquí. Las instalaciones están súper limpias, la atención es de primera y sus planes de pago me ayudaron mucho."</p>
-                <strong style="color: var(--primary-dark);">— Paciente verificado</strong>
-            </div>
-            <div style="background: var(--white); padding: 30px; border-radius: 16px; border-top: 4px solid var(--primary-light); box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
-                <div style="color: #FFD700; font-size: 1.2rem; margin-bottom: 10px;">⭐⭐⭐⭐⭐</div>
-                <p style="color: var(--text-muted); font-style: italic; margin-bottom: 20px;">"La doctora Mónica es súper profesional. Me hizo un diseño de sonrisa y me encantó el resultado, muy natural. Ampliamente recomendada."</p>
-                <strong style="color: var(--primary-dark);">— Paciente verificado</strong>
-            </div>
+        <h2 style="text-align: center; color: var(--primary-dark); font-size: 2.5rem; margin-bottom: 30px;">La confianza empieza con una buena atención</h2>
+        <div style="max-width: 700px; margin: 0 auto; background: var(--white); padding: 30px; border-radius: 16px; border-top: 4px solid var(--primary-light); box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+            <p style="color: var(--text-muted);">Nos esforzamos por ofrecer una experiencia amable, transparente y centrada en cada persona. En esta demostración no se incluyen reseñas de pacientes.</p>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Dental Roots | Dra. Mónica Guarneros Bautista. Todos los derechos reservados.</p>
+        <p>Sonrisa Álamo · Odontología integral para toda la familia</p>
+        <p style="margin-top: 8px;">Sitio de demostración. La marca, ubicación, horarios, precios y datos de contacto son ficticios.</p>
+        <p style="margin-top: 8px;">El formulario es ilustrativo y no envía ni almacena información.</p>
     </footer>
 
     <script>
-        // Establecer fecha mínima de hoy en el calendario
+        // Establece la fecha mínima del calendario.
         document.addEventListener('DOMContentLoaded', () => {
             const dateInput = document.getElementById('fecha');
             const today = new Date().toISOString().split('T')[0];
             dateInput.min = today;
         });
 
-        // Autoseleccionar tratamiento y bajar al formulario fluidamente
+        // Selecciona el tratamiento y desplaza el formulario a la vista.
         function seleccionarTratamiento(tratamiento) {
             const select = document.getElementById('servicio');
             select.value = tratamiento;
             document.getElementById('agenda').scrollIntoView({ behavior: 'smooth', block: 'start' });
             
-            // Efecto visual para indicar que se seleccionó
             select.style.boxShadow = "0 0 0 4px rgba(6, 201, 201, 0.3)";
             setTimeout(() => select.style.boxShadow = "none", 1500);
         }
 
-        // Procesar formulario y enviar a WhatsApp
-        function enviarCita(event) {
+        function simularFormulario(event) {
             event.preventDefault();
-
-            const nombre = document.getElementById('nombre').value;
-            const servicio = document.getElementById('servicio').value;
-            const fechaInput = document.getElementById('fecha').value;
-            const horario = document.getElementById('horario').value;
-            const notas = document.getElementById('notas').value;
-
-            const fechaFormat = new Date(fechaInput + 'T12:00:00').toLocaleDateString('es-MX', { 
-                weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' 
-            });
-
-            let mensaje = `👋 Hola Dra. Mónica, vi su sitio web y me gustaría agendar una cita.%0A%0A`;
-            mensaje += `👤 *Paciente:* ${nombre}%0A`;
-            mensaje += `🦷 *Tratamiento requerido:* ${servicio}%0A`;
-            mensaje += `📅 *Día sugerido:* ${fechaFormat}%0A`;
-            mensaje += `🕒 *Preferencia:* ${horario}%0A`;
-            
-            if (notas.trim() !== '') {
-                mensaje += `📝 *Notas del paciente:* ${notas}%0A`;
-            }
-            
-            mensaje += `%0A¿Podría confirmarme disponibilidad y pasos a seguir?`;
-
-            // Enviar (Teléfono de los flyers)
-            const telefono = "524774716365";
-            window.open(`https://wa.me/${telefono}?text=${mensaje}`, '_blank');
+            alert('Gracias por tu interés. Este formulario es una demostración y no envió ni guardó tu solicitud.');
         }
     </script>
 </body>
